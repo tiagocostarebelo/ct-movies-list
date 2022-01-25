@@ -1,43 +1,33 @@
 let movies = ["42", "Straight Outta Compton", "Barbershop", "Barbershop 2: Back in Business", "Barbershop: The Next Cut", "Juice", "Gang Related", "Doctor Strange", "Black Panther", "The Dark Knight Trilogy"]
 let moviesObj = [
     {
-        id: 1,
         title: "42"
     },
     {
-        id: 2,
         title: "Straight Outta Compton"
     },
     {
-        id: 3,
         title: "Barbershop"
     },
     {
-        id: 4,
         title: "Barbershop 2: Back in Business"
     },
     {
-        id: 5,
         title: "Barbershop: The Next Cut"
     },
     {
-        id: 6,
         title: "Juice"
     },
     {
-        id: 7,
         title: "Gang Related"
     },
     {
-        id: 8,
         title: "Doctor Strange"
     },
     {
-        id: 9,
         title: "Black Panther"
     },
     {
-        id: 10,
         title: "The Dark Knight Trilogy"
     },
 ]
@@ -59,8 +49,8 @@ let addTitle = document.querySelector('.add-btn');
 document.addEventListener('DOMContentLoaded', loadList());
 
 function loadList() {
-    movies.forEach((movie, index) => {
-        appendChildren(movie, index);
+    moviesObj.forEach((movie) => {
+        appendChildren(movie.title, movie.id);
         justTitles.push(movie);
     })
 }
@@ -110,13 +100,13 @@ addTitle.addEventListener('click', (e) => {
 
 
 //ADDING ELEMENTS SUPPORT FUNCTION
-function appendChildren(param, i) {
+function appendChildren(param) {
     const newLi = document.createElement('li');
     const newP = document.createElement('p');
     const newBtn = document.createElement('button');
     newBtn.textContent = 'Delete';
     newBtn.classList.add('delete-btn');
-    newBtn.id = 'deleteBtn' + i; 
+    newBtn.id = `deleteBtn ${param}`; 
     newP.innerHTML = `${param}`;
     newP.appendChild(newBtn);
     newLi.appendChild(newP);
@@ -124,4 +114,9 @@ function appendChildren(param, i) {
     return ul.appendChild(fragment);
 }
 
+
+
+moviesObj.forEach((movie, i) => {
+    movie.id = i + 1;
+  });
 
