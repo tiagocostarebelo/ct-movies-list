@@ -8,35 +8,36 @@
     <link rel="stylesheet" href="./style/styles.css">
 </head>
 <body>
-    <header>
-        <h1 class="title page-title"></h1>
+    <header id="page-header">
+        <h1 id="header-title" class="title page-title">MYMoviesDB</h1>
     </header>
-    <main>
-        <form action="" class="form-fields">
-            <input type="text" placeholder="Movie name">
-            <button type="submit" class="btn add-btn">Add movie</button>
-            <button type="search" class="btn search-btn">Search</button>       
+    <main id="main" class="container">
+        <form action="" class="form-fields" autocomplete="off" >
+            <input type="text" class="form-input" placeholder="Movie name">
+            <input type="submit" class="btn add-btn" value="Add Movie">
+            <input type="submit" class="btn search-btn" value="Search">     
         </form>
         <div class="btn sorting-btn">
-            <button type="submit" class="btn sort-up-btn">Sort A-Z</button>
-            <button type="submit" class="btn sort-down-btn">Sort Z-A</button>             
+            <input type="submit" class="btn sort-az-btn" value="Sort A-Z">
+            <input type="submit" class="btn sort-za-btn" value="Sort Z-A">            
         </div> 
-        <ul class="movie-list">
-            <!-- <li><p class="movie-name">42</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">Straight Outta Compton</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">Barbershop</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">Barbershop 2: Back in Business</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">Barbershop: The Next Cut</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">Juice</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">Gang Related</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">Doctor Strange</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">Black Panther</p><button type="delete" class="btn delete-btn">Delete</button></li>               
-            <li><p class="movie-name">The Dark Knight Trilogy</p><button type="delete" class="btn delete-btn">Delete</button></li>                -->
+        <h2 class="title movies-list-title">Movies List</h2>
+        <ul class="movie-list">            
+            <!-- <li class="movie-item"><p class="movie-name">Doctor Strange</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">Eternals</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">Big Hero 6</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">Black Panther</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">42</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">Pacific Rim</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">Battleship</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">Venom</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">Draft Day</p><input type="button" class="btn delete-btn" value="Delete"></li>               
+            <li class="movie-item"><p class="movie-name">Any Given Sunday</p><input type="button" class="btn delete-btn" value="Delete"></li>                -->
         </ul> 
     </main>
     <footer>
         <p class="text footer-text"></p>
     </footer>
-    <script src="./js/main.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
