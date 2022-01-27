@@ -6,6 +6,7 @@ let addBtn = document.querySelector('.add-btn');
 let sortAZ = document.querySelector('.sort-az-btn');
 let sortZA = document.querySelector('.sort-za-btn');
 let inputBox = document.querySelector('.form-input');
+let searchBtn = document.querySelector('.search-btn');
 
 
 // EVENT LISTENERS
