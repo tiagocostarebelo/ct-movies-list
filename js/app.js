@@ -81,21 +81,41 @@ function sortMoviesZtoA(event) {
     })    
 }
 
-// SEARCH live
+//SEARCH live Case Sensitive
+// function searchLive() {
+//     let inputValue = inputBox.value
+//     let movieListItem = ul.querySelectorAll('.movie-item');
+//     for (let i = 0; i < movieListItem.length; i++) {
+//         let paragraph = movieListItem[i].getElementsByTagName('p')[0];
+//         if(paragraph.innerHTML.indexOf(inputValue) > -1) {
+//             movieListItem[i].style.display = '';
+//         } else {
+//             movieListItem[i].style.display = 'none';
+//         }
+//     }
+// }
+
+//Search Live Case Insensitive
 function searchLive() {
-    let inputValueUpper = inputBox.value.toUpperCase();
-    let inputValueLower = inputBox.value.toLowerCase();
+    let inputValue = inputBox.value.toLowerCase();
     let movieListItem = ul.querySelectorAll('.movie-item');
     for (let i = 0; i < movieListItem.length; i++) {
         let paragraph = movieListItem[i].getElementsByTagName('p')[0];
-        if(paragraph.innerHTML.indexOf(inputValueUpper) > -1 || 
-           (paragraph.innerHTML.indexOf(inputValueLower) > -1)) {
+        let paragraphs = paragraph.textContent;
+        let lowerParagraphs = paragraphs.toLowerCase();
+        console.log(lowerParagraphs)
+        if(lowerParagraphs.indexOf(inputValue) > -1) {
             movieListItem[i].style.display = '';
         } else {
             movieListItem[i].style.display = 'none';
         }
     }
 }
+
+// SEARCH Live with RegEx
+
+
+
 
 //DELETE
 function deleteMovie(e) {
