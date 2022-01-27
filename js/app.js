@@ -6,7 +6,6 @@ let addBtn = document.querySelector('.add-btn');
 let sortAZ = document.querySelector('.sort-az-btn');
 let sortZA = document.querySelector('.sort-za-btn');
 let inputBox = document.querySelector('.form-input');
-let searchBtn = document.querySelector('.search-btn');
 
 
 // EVENT LISTENERS
@@ -15,6 +14,7 @@ window.addEventListener('click', deleteMovie)
 addBtn.addEventListener('click', addNewMovie);
 sortAZ.addEventListener('click', sortMoviesAtoZ);
 sortZA.addEventListener('click', sortMoviesZtoA);
+inputBox.addEventListener('keyup', searchLive);
 
 
 // Loading movies dinamically to the page
@@ -56,7 +56,8 @@ function addNewMovie(event) {
         return alert('That movie was already added')
     } else {
         newMovies.push(newTitle);
-        updateUi(newTitle);        
+        updateUi(newTitle);
+        inputBox.value = '';     
     }    
 }
 
@@ -81,7 +82,20 @@ function sortMoviesZtoA(event) {
 }
 
 // SEARCH live
-
+function searchLive() {
+    let inputValueUpper = inputBox.value.toUpperCase();
+    let inputValueLower = inputBox.value.toLowerCase();
+    let movieListItem = ul.querySelectorAll('.movie-item');
+    for (let i = 0; i < movieListItem.length; i++) {
+        let paragraph = movieListItem[i].getElementsByTagName('p')[0];
+        if(paragraph.innerHTML.indexOf(inputValueUpper) > -1 || 
+           (paragraph.innerHTML.indexOf(inputValueLower) > -1)) {
+            movieListItem[i].style.display = '';
+        } else {
+            movieListItem[i].style.display = 'none';
+        }
+    }
+}
 
 //DELETE
 function deleteMovie(e) {
