@@ -8,36 +8,29 @@
     <link rel="stylesheet" href="./style/styles.css">
 </head>
 <body>
-    <header id="page-header">
-        <h1 id="header-title" class="title page-title">MYMoviesDB</h1>
-    </header>
     <main id="main" class="container">
+        <header id="page-header">
+            <h1 id="header-title" class="title page-title">MYMoviesDB</h1>
+        </header>
         <form action="" class="form-fields" autocomplete="off" >
             <input type="text" class="form-input" placeholder="Movie name">
-            <input type="submit" class="btn add-btn" value="Add Movie">
-            <input type="submit" class="btn search-btn" value="Search">     
+            <div class="menu-btns">
+                <input type="submit" class="btn add-btn" value="Add Movie">
+                <input type="submit" class="btn search-btn" value="Search">
+            </div>     
         </form>
-        <div class="btn sorting-btn">
+        <h2 class="title movies-list-title">Movies List</h2>
+        <div class="sorting-btn">
             <input type="submit" class="btn sort-az-btn" value="Sort A-Z">
             <input type="submit" class="btn sort-za-btn" value="Sort Z-A">            
-        </div> 
-        <h2 class="title movies-list-title">Movies List</h2>
-        <ul class="movie-list">            
-            <!-- <li class="movie-item"><p class="movie-name">Doctor Strange</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">Eternals</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">Big Hero 6</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">Black Panther</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">42</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">Pacific Rim</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">Battleship</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">Venom</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">Draft Day</p><input type="button" class="btn delete-btn" value="Delete"></li>               
-            <li class="movie-item"><p class="movie-name">Any Given Sunday</p><input type="button" class="btn delete-btn" value="Delete"></li>                -->
-        </ul> 
+        </div>         
+        <ul class="movie-list">
+        </ul>     
+        <footer>
+            <p class="text footer-text">Coded by Tiago Costa Rebelo</p>
+        </footer>    
     </main>
-    <footer>
-        <p class="text footer-text"></p>
-    </footer>
+    
     <script src="./js/app.js"></script>
 </body>
 </html>

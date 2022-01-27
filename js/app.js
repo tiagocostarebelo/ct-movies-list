@@ -35,10 +35,11 @@ function updateUi(paramItem) {
         newP.innerText = `${paramItem}`;
         const inputBtn = document.createElement('input');
         inputBtn.setAttribute('type', 'button');
-        inputBtn.setAttribute('class', 'delete-btn');
+        inputBtn.setAttribute('class', 'btn delete-btn');
         inputBtn.setAttribute('value', 'Delete');
-        newP.appendChild(inputBtn);
+        
         newLi.appendChild(newP);
+        newLi.appendChild(inputBtn);
         fragment.appendChild(newLi);
         ul.appendChild(fragment);
     }
@@ -53,8 +54,8 @@ function addNewMovie(event) {
     } else if (newMovies.includes(newTitle)) {
         return alert('That movie was already added')
     } else {
-        updateUi(newTitle)
         newMovies.push(newTitle);
+        updateUi(newTitle);        
     }    
 }
 
