@@ -50,13 +50,19 @@ function updateUi(paramItem) {
 function addNewMovie(event) {
     event.preventDefault();
     const newTitle = inputBox.value;
-    if (newTitle == '') {
+    const titleCapitalize = newTitle.split(" ");
+    for (let i = 0; i < titleCapitalize.length; i++) {
+        titleCapitalize[i] = titleCapitalize[i].charAt(0).toUpperCase() + titleCapitalize[i].slice(1);
+    }
+    const newTitleCapitalized = titleCapitalize.join(" ");
+    console.log(newTitleCapitalized)
+    if (newTitleCapitalized == '') {
         return alert('Enter a Movie title')
-    } else if (newMovies.includes(newTitle)) {
+    } else if (newMovies.includes(newTitleCapitalized)) {
         return alert('That movie was already added')
     } else {
-        newMovies.push(newTitle);
-        updateUi(newTitle);
+        newMovies.push(newTitleCapitalized);
+        updateUi(newTitleCapitalized);
         inputBox.value = '';     
     }    
 }
@@ -103,7 +109,6 @@ function searchLive() {
         let paragraph = movieListItem[i].getElementsByTagName('p')[0];
         let paragraphs = paragraph.textContent;
         let lowerParagraphs = paragraphs.toLowerCase();
-        console.log(lowerParagraphs)
         if(lowerParagraphs.indexOf(inputValue) > -1) {
             movieListItem[i].style.display = '';
         } else {
