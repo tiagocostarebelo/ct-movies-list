@@ -107,9 +107,8 @@ function searchLive() {
     let movieListItem = ul.querySelectorAll('.movie-item');
     for (let i = 0; i < movieListItem.length; i++) {
         let paragraph = movieListItem[i].getElementsByTagName('p')[0];
-        let paragraphs = paragraph.textContent;
-        let lowerParagraphs = paragraphs.toLowerCase();
-        if(lowerParagraphs.indexOf(inputValue) > -1) {
+        let paragraphs = paragraph.textContent.toLowerCase();
+        if(paragraphs.indexOf(inputValue) > -1) {
             movieListItem[i].style.display = '';
         } else {
             movieListItem[i].style.display = 'none';
@@ -119,7 +118,19 @@ function searchLive() {
 
 // SEARCH Live with RegEx
 
-
+// function searchLive() {
+//     let inputValue = inputBox.value;
+//     let regex = new RegExp(`${inputValue}`, 'ig');
+//     let movieListItem = ul.querySelectorAll('.movie-item');
+//     for (let i = 0; i < movieListItem.length; i++) {
+//         let paragraph = movieListItem[i].getElementsByTagName('p')[0];
+//         if(paragraph.textContent.indexOf(inputValue) > -1) {
+//             movieListItem[i].style.display = '';
+//         } else {
+//             movieListItem[i].style.display = 'none';
+//         }
+//     }
+// }
 
 
 //DELETE
