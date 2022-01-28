@@ -116,22 +116,6 @@ function searchLive() {
     }
 }
 
-// SEARCH Live with RegEx
-
-// function searchLive() {
-//     let inputValue = inputBox.value;
-//     let regex = new RegExp(`${inputValue}`, 'ig');
-//     let movieListItem = ul.querySelectorAll('.movie-item');
-//     for (let i = 0; i < movieListItem.length; i++) {
-//         let paragraph = movieListItem[i].getElementsByTagName('p')[0];
-//         if(paragraph.textContent.indexOf(inputValue) > -1) {
-//             movieListItem[i].style.display = '';
-//         } else {
-//             movieListItem[i].style.display = 'none';
-//         }
-//     }
-// }
-
 
 //DELETE
 function deleteMovie(e) {
